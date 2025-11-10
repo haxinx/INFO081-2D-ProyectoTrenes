@@ -1,11 +1,31 @@
 import tkinter as tk
 from tkinter import font
-
+import time
+from reloj.py import SimulationClock
 from config import WINDOW_TITLE, WINDOW_SIZE, BG_COLOR
 from ui.widget.button import crear_boton
 
+
+
+
 def main():
 
+    mi_reloj = SimulationClock(hora_inicio=6)
+    running = True
+    pasos_simulacion = 0
+
+    print("iniciando simulación de trenes")
+
+    while running:
+        mi_reloj.avanzar_tiempo(minutos=1)
+        hora_actual_str = mi_reloj.get_hora_str()
+        print(f"Hora: {hora_actual_str}")
+        pasos_simulacion += 1
+    
+        if pasos_simulacion > (60 * 24):
+        running = False
+        print("Simulación de un dia completada.")
+    
     def iniciar_simulacion():
         root.destroy()
         import ui.Pestañas.simulacion
@@ -44,4 +64,5 @@ def main():
 if __name__ == "__main__":
     print("Ejecutando desde Main.")
     main()
+
 
