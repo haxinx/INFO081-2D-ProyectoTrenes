@@ -1,0 +1,7 @@
+TITULO1 = "Menú Principal"
+TITULO2="Editar Tren"
+TITULO3="Simulación"
+TITULO4="Cargar guardado"
+ARCHIVO = "trenes.txt"
+WINDOW_TITLE = "Mi Aplicación"
+WINDOW_SIZE = "600x600"
